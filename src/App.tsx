@@ -25,7 +25,6 @@ export default class App extends Component {
       borderRadiusString: "0 0 0 0",
       styleText: ""
     }
-    this.onBorderRadiusChange = this.onBorderRadiusChange.bind(this)
 
     this.boxRef = React.createRef()
   }
@@ -35,7 +34,7 @@ export default class App extends Component {
       return prevState;
     })
   }
-  onBorderRadiusChange(event: Event, value: number | number[], activeThumb: number) {
+  onBorderRadiusChange = (event: Event, value: number | number[], activeThumb: number) => {
 
     this.setState((prevState: State, props) => {
       if ((event.target as Window).name) {

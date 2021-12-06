@@ -1,4 +1,4 @@
-import { Card, CardContent, MenuItem, Select, Slider, Stack, Typography } from '@mui/material'
+import { Card, CardContent, Slider, Stack, Typography } from '@mui/material'
 import React, { Component } from 'react'
 import { BorderRadius } from './Interfaces'
 
@@ -12,24 +12,25 @@ export default class BorderRadiusPreviewerController extends Component<Props> {
     render() {
 
         return (
-            <Card>
+            <Card sx={{ p: 2 }}>
                 <CardContent>
                     <Stack spacing={3}>
-                        <Typography variant="h3" component="h2">Modifiy Box</Typography>
-                        <Stack direction="row" spacing={5}>
-                            <span>borderTop</span>
+                        <Typography variant="h4" component="h2">Modifiy Box Radius</Typography>
+                        <Stack direction="row" spacing={5} alignItems="center">
+                            <span style={{ minWidth: 50 }}>Top</span>
                             <Slider name="borderTop" value={this.props.borderRadius.borderTop} onChange={this.props.onBorderRadiusChange} />
-                            <Select>
-                                <MenuItem value={10}>Ten</MenuItem>
-                            </Select>
-                            <span>borderLeft</span>
+
+                            <span style={{ minWidth: 50 }}>Left</span>
                             <Slider name="borderLeft" value={this.props.borderRadius.borderLeft} onChange={this.props.onBorderRadiusChange} />
+
                         </Stack>
-                        <Stack direction="row" spacing={5}>
-                            <span>borderBottom</span>
+                        <Stack direction="row" spacing={5} alignItems="center">
+                            <span style={{ minWidth: 50 }}>Bottom</span>
                             <Slider name="borderBottom" value={this.props.borderRadius.borderBottom} onChange={this.props.onBorderRadiusChange} />
-                            <span>borderRight</span>
+
+                            <span style={{ minWidth: 50 }}>Right</span>
                             <Slider name="borderRight" value={this.props.borderRadius.borderRight} onChange={this.props.onBorderRadiusChange} />
+
                         </Stack>
                     </Stack>
                 </CardContent>
